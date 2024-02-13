@@ -2,6 +2,7 @@
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const descrSearchText = input_search_desc.value;
+console.log(descrSearchText);
 
 const list = document.querySelector(".js-list");
 const kittenOneUrl = "https://dev.adalab.es/gato-siames.webp";
@@ -28,30 +29,25 @@ const kittenThree = `<li class="card js-cardThree"><article> <img class="card_im
 
 list.innerHTML =  kittenOne + kittenTwo + kittenThree; 
 
-const catOne = document.querySelector('.js-cardOne');
-const catTwo = document.querySelector('.js-cardTwo');
-const catThree = document.querySelector('.js-cardThree');
+input_search_desc.addEventListener('input', function() {
+    const descrSearchText = input_search_desc.value.trim().toLowerCase();
 
-if( kittenOneDesc.includes(descrSearchText) ) {
-
-    catOne.style.display = 'block';
-    catTwo.style.display = 'none';
-    catThree.style.display = 'none';
-    }
-    
-    if( kittenTwoDesc.includes(descrSearchText) ) {
-        catOne.style.display = 'none';
-        catTwo.style.display = 'block';
-        catThree.style.display = 'none';
-    }
-    
-    if( kittenThreeDesc.includes(descrSearchText) ) {
-        catOne.style.display = 'none';
-        catTwo.style.display = 'none';
-        catThree.style.display = 'block';
+    if (kittenOneDesc.toLowerCase().includes(descrSearchText)) {
+        kittenOne.classList.remove('hidden');
+    } else {
+        kittenOne.classList.add('hidden');
     }
 
+    if (kittenTwoDesc.toLowerCase().includes(descrSearchText)) {
+        kittenTwo.classList.remove('hidden');
+    } else {
+        kittenTwo.classList.add('hidden');
+    }
 
-
-console.log(list);
+    if (kittenThreeDesc.toLowerCase().includes(descrSearchText)) {
+        kittenThree.classList.remove('hidden');
+    } else {
+        kittenThree.classList.add('hidden');
+    }
+});
 
