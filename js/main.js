@@ -7,6 +7,7 @@ const kittenOneRace = "Siamés";
 const kittenOneDesc = "Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente."
 
 
+
 const kittenTwoUrl = "https://dev.adalab.es/sphynx-gato.webp";
 const kittenTwoName = "Fiona".toUpperCase();
 const kittenTwoRace = "Sphynx";
