@@ -46,31 +46,46 @@ console.log('kittenOneDesc', kittenOneDesc);
     3
 */
 
-if(descrSearchText.includes("")) {
-        catOne.style.display = 'block';
-        catTwo.style.display = 'block';
-        catThree.style.display = 'block';
-    } else if (kittenOneDesc.includes(descrSearchText)) {
-        catOne.style.display = 'block';
-        catTwo.style.display = 'none';
-        catThree.style.display = 'none';
-    } else if (kittenTwoDesc.includes(descrSearchText) ) { 
-        catOne.style.display = 'none';
-        catTwo.style.display = 'block';
-        catThree.style.display = 'none';
-    } if( kittenThreeDesc.includes(descrSearchText) ) {
-        catOne.style.display = 'none';
-        catTwo.style.display = 'none';
-        catThree.style.display = 'block';
-    } 
-
-
-
-
-
-
-
-
-
+if(descrSearchText === "") {
+    catOne.style.display = 'block';
+    catTwo.style.display = 'block';
+    catThree.style.display = 'block';
+} else if (kittenOneDesc.includes(descrSearchText)) {
+    catOne.style.display = 'block';
+    catTwo.style.display = 'none';
+    catThree.style.display = 'none';
+} else if (kittenTwoDesc.includes(descrSearchText) ) { 
+    catOne.style.display = 'none';
+    catTwo.style.display = 'block';
+    catThree.style.display = 'none';
+} else if( kittenThreeDesc.includes(descrSearchText) ) {
+    catOne.style.display = 'none';
+    catTwo.style.display = 'none';
+    catThree.style.display = 'block';
+} 
 
 console.log(list);
+
+
+// EJERCICIO 14 DE FEBRERO 1. FORMULARIO: Adicionar nuevo gatito
+
+const buttonAdd = document.querySelector(".js-btn-add");
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMessageError = document.querySelector('.js-label-error');
+
+
+buttonAdd.addEventListener('click', () => {
+    console.log(1);
+    const valueDesc = inputDesc.value;
+    const valuePhoto = inputPhoto.value;
+    const valueName = inputName.value;
+
+
+    if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
+    } else {
+      //completa el código
+    }
+});
