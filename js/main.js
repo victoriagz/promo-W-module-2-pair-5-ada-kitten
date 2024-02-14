@@ -97,9 +97,11 @@ const inputDesc = document.querySelector('.js-input-desc');
 const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
 const labelMessageError = document.querySelector('.js-label-error');
+const deploy = document.querySelector('.new-form');
 
-
-buttonAdd.addEventListener('click', () => {
+buttonAdd.addEventListener('click', (event) => {
+    console.log('efklmglsedgel');
+    deploy.style.display = 'block';
     const valueDesc = inputDesc.value;
     const valuePhoto = inputPhoto.value;
     const valueName = inputName.value;
