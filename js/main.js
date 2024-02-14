@@ -46,23 +46,24 @@ console.log('kittenOneDesc', kittenOneDesc);
     3
 */
 
-if(descrSearchText === "") {
-    catOne.style.display = 'block';
-    catTwo.style.display = 'block';
-    catThree.style.display = 'block';
-} else if (kittenOneDesc.includes(descrSearchText)) {
-    catOne.style.display = 'block';
-    catTwo.style.display = 'none';
-    catThree.style.display = 'none';
-} else if (kittenTwoDesc.includes(descrSearchText) ) { 
-    catOne.style.display = 'none';
-    catTwo.style.display = 'block';
-    catThree.style.display = 'none';
-} else if( kittenThreeDesc.includes(descrSearchText) ) {
-    catOne.style.display = 'none';
-    catTwo.style.display = 'none';
-    catThree.style.display = 'block';
-} 
+
+// if(descrSearchText === "") {
+//     catOne.style.display = 'block';
+//     catTwo.style.display = 'block';
+//     catThree.style.display = 'block';
+// } else if (kittenOneDesc.includes(descrSearchText)) {
+//     catOne.style.display = 'block';
+//     catTwo.style.display = 'none';
+//     catThree.style.display = 'none';
+// } else if (kittenTwoDesc.includes(descrSearchText) ) { 
+//     catOne.style.display = 'none';
+//     catTwo.style.display = 'block';
+//     catThree.style.display = 'none';
+// } else if( kittenThreeDesc.includes(descrSearchText) ) {
+//     catOne.style.display = 'none';
+//     catTwo.style.display = 'none';
+//     catThree.style.display = 'block';
+// } 
 
 console.log(list);
 
