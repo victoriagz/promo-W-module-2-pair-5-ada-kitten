@@ -64,8 +64,23 @@ if (kittenOneDesc.includes(descrSearchText)) {
     catThree.style.display = 'block';
 }
 
+const buttonAdd = document.querySelector(".js-btn-add");
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMessageError = document.querySelector('.js-label-error');
 
-
+buttonAdd.addEventListener('click', (event) => {
+    const valueDesc = inputDesc.value;
+    const valuePhoto = inputPhoto.value;
+    const valueName = inputName.value;
+    
+    if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+        labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
+    } else {
+        //completa el código
+    }
+});
 
 
 
