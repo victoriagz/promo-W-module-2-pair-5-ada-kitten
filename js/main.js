@@ -46,6 +46,28 @@ console.log('kittenOneDesc', kittenOneDesc);
     3
 */
 
+if (descrSearchText === "") {
+    catOne.style.display = 'block';
+    catTwo.style.display = 'block';
+    catThree.style.display = 'block';
+} else {
+    catOne.style.display = 'none';
+    catTwo.style.display = 'none';
+    catThree.style.display = 'none';
+}
+
+if (kittenOneDesc.includes(descrSearchText)) {
+    catOne.style.display = 'block';
+} else if (kittenTwoDesc.includes(descrSearchText)) {
+    catTwo.style.display = 'block';
+} else if (kittenThreeDesc.includes(descrSearchText)) {
+    catThree.style.display = 'block';
+}
+
+
+
+
+
 
 // if(descrSearchText === "") {
 //     catOne.style.display = 'block';
