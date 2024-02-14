@@ -1,7 +1,10 @@
 'use strict';
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
+console.log('> input_search_desc', input_search_desc);
 const descrSearchText = input_search_desc.value;
+console.log('> descrSearchText', descrSearchText);
+
 
 const list = document.querySelector(".js-list");
 const kittenOneUrl = "https://dev.adalab.es/gato-siames.webp";
@@ -33,26 +36,41 @@ const catOne = document.querySelector('.js-cardOne');
 const catTwo = document.querySelector('.js-cardTwo');
 const catThree = document.querySelector('.js-cardThree');
 
-if( kittenOneDesc.includes(descrSearchText) ) {
+console.log('kittenOneDesc', kittenOneDesc);
 
-    catOne.style.display = 'block';
-    catTwo.style.display = 'none';
-    catThree.style.display = 'none';
-    }
-    
-    if( kittenTwoDesc.includes(descrSearchText) ) {
+/*
+ Si descrSearchText es "", añadais block a todas
+ sino --> else if
+    1
+    2
+    3
+*/
+
+if(descrSearchText.includes("")) {
+        catOne.style.display = 'block';
+        catTwo.style.display = 'block';
+        catThree.style.display = 'block';
+    } else if (kittenOneDesc.includes(descrSearchText)) {
+        catOne.style.display = 'block';
+        catTwo.style.display = 'none';
+        catThree.style.display = 'none';
+    } else if (kittenTwoDesc.includes(descrSearchText) ) { 
         catOne.style.display = 'none';
         catTwo.style.display = 'block';
         catThree.style.display = 'none';
-    }
-    
-    if( kittenThreeDesc.includes(descrSearchText) ) {
+    } if( kittenThreeDesc.includes(descrSearchText) ) {
         catOne.style.display = 'none';
         catTwo.style.display = 'none';
         catThree.style.display = 'block';
-    }
+    } 
+
+
+
+
+
+
+
 
 
 
 console.log(list);
-

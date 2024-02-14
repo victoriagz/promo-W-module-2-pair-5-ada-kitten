@@ -214,3 +214,6 @@ li {
   color: white;
 }
 
+.hidden {
+  display: none;
+}
