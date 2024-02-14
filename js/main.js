@@ -92,24 +92,35 @@ console.log(list);
 
 // EJERCICIO 14 DE FEBRERO 1. FORMULARIO: Adicionar nuevo gatito
 
-const buttonAdd = document.querySelector(".js-btn-add");
+const buttonDeploy = document.querySelector('.js-btn-deploy');
+const buttonAdd = document.querySelector('.js-btn-add')
+const buttonCancel = document.querySelector('.js-btn-cancel')
 const inputDesc = document.querySelector('.js-input-desc');
 const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
 const labelMessageError = document.querySelector('.js-label-error');
 const deploy = document.querySelector('.new-form');
 
-buttonAdd.addEventListener('click', (event) => {
+buttonDeploy.addEventListener('click', (event) => {
     console.log('efklmglsedgel');
     deploy.style.display = 'block';
+});
+
+
+buttonAdd.addEventListener('click', (event) => { 
     const valueDesc = inputDesc.value;
     const valuePhoto = inputPhoto.value;
     const valueName = inputName.value;
-
-
+  
     if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-    labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
+      labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
     } else {
-      //completa el código
+      // Completa el código
     }
+  });
+
+  buttonCancel.addEventListener('click', (event) => {
+    deploy.style.display = 'none';
 });
+
+
