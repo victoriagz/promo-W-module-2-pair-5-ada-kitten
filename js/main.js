@@ -101,10 +101,11 @@ const inputName = document.querySelector('.js-input-name');
 const labelMessageError = document.querySelector('.js-label-error');
 const deploy = document.querySelector('.new-form');
 
-buttonDeploy.addEventListener('click', (event) => {
-    console.log('efklmglsedgel');
+
+  buttonDeploy.addEventListener('click', (event) => {
     deploy.style.display = 'block';
 });
+
 
 
 buttonAdd.addEventListener('click', (event) => { 
@@ -118,6 +119,8 @@ buttonAdd.addEventListener('click', (event) => {
       // Completa el código
     }
   });
+
+
 
   buttonCancel.addEventListener('click', (event) => {
     deploy.style.display = 'none';
