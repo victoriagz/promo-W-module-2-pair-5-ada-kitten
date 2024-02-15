@@ -83,5 +83,26 @@ buttonAdd.addEventListener('click', (event) => {
 });
 
 
+const linkNewFormElement = document.querySelector('.menu-nav'); //botón
+const newFormElement = document.querySelector('.new-form'); // contenedor
 
-console.log(list);
+function showNewCatForm() {
+    newFormElement.classList.remove('collapsed');
+  }
+
+
+  function hideNewCatForm() {
+    newFormElement.classList.add('collapsed');
+  }
+  
+
+ linkNewFormElement.addEventListener('click', handleClickNewCatForm);
+
+ function handleClickNewCatForm(event) {
+    event.preventDefault();
+    if (newFormElement.classList.contains('collapsed')) {
+        showNewCatForm();
+    } else {
+        hideNewCatForm();
+    }
+  }
