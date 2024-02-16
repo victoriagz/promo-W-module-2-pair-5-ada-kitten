@@ -1,9 +1,7 @@
 'use strict';
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
-console.log('> input_search_desc', input_search_desc);
 const descrSearchText = input_search_desc.value;
-console.log('> descrSearchText', descrSearchText);
 
 
 const list = document.querySelector(".js-list");
@@ -36,7 +34,7 @@ const catOne = document.querySelector('.js-cardOne');
 const catTwo = document.querySelector('.js-cardTwo');
 const catThree = document.querySelector('.js-cardThree');
 
-console.log('kittenOneDesc', kittenOneDesc);
+
 
 /*
  Si descrSearchText es "", añadais block a todas
@@ -46,23 +44,23 @@ console.log('kittenOneDesc', kittenOneDesc);
     3
 */
 
-if(descrSearchText === "") {
-    catOne.style.display = 'block';
-    catTwo.style.display = 'block';
-    catThree.style.display = 'block';
-} else {
-    catOne.style.display = 'none';
-    catTwo.style.display = 'none';
-    catThree.style.display = 'none';
-}
+// if(descrSearchText === "") {
+//     catOne.style.display = 'block';
+//     catTwo.style.display = 'block';
+//     catThree.style.display = 'block';
+// } else {
+//     catOne.style.display = 'none';
+//     catTwo.style.display = 'none';
+//     catThree.style.display = 'none';
+// }
 
-if (kittenOneDesc.includes(descrSearchText)) {
-    catOne.style.display = 'block';
-} else if (kittenTwoDesc.includes(descrSearchText)) {
-    catTwo.style.display = 'block';
-} else if (kittenThreeDesc.includes(descrSearchText)) {
-    catThree.style.display = 'block';
-}
+// if (kittenOneDesc.includes(descrSearchText)) {
+//     catOne.style.display = 'block';
+// } else if (kittenTwoDesc.includes(descrSearchText)) {
+//     catTwo.style.display = 'block';
+// } else if (kittenThreeDesc.includes(descrSearchText)) {
+//     catThree.style.display = 'block';
+// }
 
 const buttonAdd = document.querySelector(".js-btn-add");
 const inputDesc = document.querySelector('.js-input-desc');
@@ -115,20 +113,43 @@ function showNewCatForm() {
 
 const buttonSearch = document.querySelector('.js-button-search');
 
-buttonSearch.addEventListener('click', filterKitten);
 
 const filterKitten = (event) => {
-    if (kittenDesc1.includes(descrSearchText)) {
+    event.preventDefault()
+    if (kittenOneDesc.includes(descrSearchText)) {
         catOne.style.display = 'block';
-        catTwo.style.display = 'block';
-        catThree.style.display = 'block';
-    }
-    if (kittenDesc2.includes(descrSearchText)) {
-        catOne.style.display = 'none';
         catTwo.style.display = 'none';
         catThree.style.display = 'none';
     }
-    if (kittenDesc3.includes(descrSearchText)) {
-      listElement.innerHTML += kittenThree;
+    if (kittenTwoDesc.includes(descrSearchText)) {
+        catOne.style.display = 'none';
+        catTwo.style.display = 'block';
+        catThree.style.display = 'none';
+    }
+    if (kittenThreeDesc.includes(descrSearchText)) {
+        catOne.style.display = 'none';
+        catTwo.style.display = 'none';
+        catThree.style.display = 'block';
     }
   };
+
+  buttonSearch.addEventListener('click', filterKitten);
+
+
+// if(descrSearchText === "") {
+//     catOne.style.display = 'block';
+//     catTwo.style.display = 'block';
+//     catThree.style.display = 'block';
+// } else if (kittenOneDesc.includes(descrSearchText)) {
+//     catOne.style.display = 'block';
+//     catTwo.style.display = 'none';
+//     catThree.style.display = 'none';
+// } else if (kittenTwoDesc.includes(descrSearchText) ) { 
+//     catOne.style.display = 'none';
+//     catTwo.style.display = 'block';
+//     catThree.style.display = 'none';
+// } else if( kittenThreeDesc.includes(descrSearchText) ) {
+//     catOne.style.display = 'none';
+//     catTwo.style.display = 'none';
+//     catThree.style.display = 'block';
+// } 
