@@ -106,3 +106,29 @@ function showNewCatForm() {
         hideNewCatForm();
     }
   }
+
+
+// FILTRAR POR DESCRIPCION 
+
+// const input_search_desc = document.querySelector('.js_in_search_desc'); 
+// const descrSearchText = input_search_desc.value;
+
+const buttonSearch = document.querySelector('.js-button-search');
+
+buttonSearch.addEventListener('click', filterKitten);
+
+const filterKitten = (event) => {
+    if (kittenDesc1.includes(descrSearchText)) {
+        catOne.style.display = 'block';
+        catTwo.style.display = 'block';
+        catThree.style.display = 'block';
+    }
+    if (kittenDesc2.includes(descrSearchText)) {
+        catOne.style.display = 'none';
+        catTwo.style.display = 'none';
+        catThree.style.display = 'none';
+    }
+    if (kittenDesc3.includes(descrSearchText)) {
+      listElement.innerHTML += kittenThree;
+    }
+  };
