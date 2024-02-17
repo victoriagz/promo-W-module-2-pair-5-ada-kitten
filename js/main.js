@@ -120,16 +120,19 @@ const filterKitten = (event) => {
         catOne.style.display = 'block';
         catTwo.style.display = 'none';
         catThree.style.display = 'none';
+        console.log("gato1");
     }
     if (kittenTwoDesc.includes(descrSearchText)) {
         catOne.style.display = 'none';
         catTwo.style.display = 'block';
         catThree.style.display = 'none';
+        console.log("gato2");
     }
     if (kittenThreeDesc.includes(descrSearchText)) {
         catOne.style.display = 'none';
         catTwo.style.display = 'none';
         catThree.style.display = 'block';
+        console.log("gato3");
     }
   };
 
