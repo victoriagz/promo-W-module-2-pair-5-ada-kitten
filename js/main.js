@@ -64,6 +64,8 @@ const inputPhoto = document.querySelector(".js-input-photo");
 const inputName = document.querySelector(".js-input-name");
 const labelMessageError = document.querySelector(".js-label-error");
 
+const searchMessage = document.querySelector(".js-message");
+
 buttonAdd.addEventListener("click", (event) => {
   const valueDesc = inputDesc.value;
   const valuePhoto = inputPhoto.value;
@@ -103,7 +105,12 @@ const filterKitten = (event) => {
   event.preventDefault();
   const descrSearchText = input_search_desc.value; // movido el value a dentro de la función, para que coja el valor de lo que hay dentro del input, antes lo teníamos fuera, y entonces, nunca tenía valor.
 
-  if (kittenData_1.desc.includes(descrSearchText)) {
+  if (descrSearchText === "") {
+    catOne.classList.remove("hidden");
+    catTwo.classList.remove("hidden");
+    catThree.classList.remove("hidden");
+    console.log("Mostrar todos los gatos");
+  } else if (kittenData_1.desc.includes(descrSearchText)) {
     catOne.classList.remove("hidden");
     catTwo.classList.add("hidden");
     catThree.classList.add("hidden");
@@ -118,6 +125,12 @@ const filterKitten = (event) => {
     catOne.classList.add("hidden");
     catTwo.classList.add("hidden");
     console.log(3);
+  } else {
+    catOne.classList.add("hidden");
+    catTwo.classList.add("hidden");
+    catThree.classList.add("hidden");
+
+    searchMessage.innerHTML = "No hay coincidencias";
   }
 };
 
