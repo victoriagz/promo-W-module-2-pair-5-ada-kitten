@@ -101,7 +101,7 @@ const buttonSearch = document.querySelector(".js-button-search");
 
 const filterKitten = (event) => {
   event.preventDefault();
-  const descrSearchText = input_search_desc.value; // movido el value a dentro de la función, para que coja el valor de lo que hay dentro del input, antes lo teníamos fuera, y entonces, nunca tenía valor.
+  const descrSearchText = input_search_desc.value;
 
   if (kittenData_1.desc.includes(descrSearchText)) {
     catOne.classList.remove("hidden");
