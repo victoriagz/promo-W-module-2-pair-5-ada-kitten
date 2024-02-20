@@ -122,3 +122,4 @@ const filterKitten = (event) => {
 };
 
 buttonSearch.addEventListener("click", filterKitten);
+
