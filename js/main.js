@@ -129,18 +129,10 @@ const filterKitten = (event) => {
   const descrSearchText = input_search_desc.value;
 
   if (descrSearchText === "") {
-<<<<<<< HEAD
-    catOne.classList.remove("hidden");
-    catTwo.classList.remove("hidden");
-    catThree.classList.remove("hidden");
-    console.log("Mostrar todos los gatos");
-  } else if (kittenData_1.desc.includes(descrSearchText)) {
-=======
     catThree.classList.remove("hidden");
     catOne.classList.remove("hidden");
     catTwo.classList.remove("hidden");
   } else if (kittenDataList[0].desc.includes(descrSearchText)) {
->>>>>>> main
     catOne.classList.remove("hidden");
     catTwo.classList.add("hidden");
     catThree.classList.add("hidden");
