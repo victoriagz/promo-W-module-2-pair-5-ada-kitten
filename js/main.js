@@ -69,6 +69,25 @@ const labelMessageError = document.querySelector(".js-label-error");
 
 const searchMessage = document.querySelector(".js-message");
 
+function renderKitten() {
+  const valueRace = inputRace.value;
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+
+  const newKitten = `
+    <li class="card">
+        <article>
+            <img class="card_img" src="${valuePhoto}" alt="gatito"/> 
+            <h3 class="card_title">${valueName}</h3>
+            <h4 class="card_race">${valueRace}</h4>
+            <p class="card_description">${valueDesc}</p>
+        </article>
+    </li>`;
+
+  return newKitten;
+}
+
 buttonAdd.addEventListener("click", (event) => {
   const valueRace = inputRace.value;
   const valueDesc = inputDesc.value;
@@ -81,24 +100,9 @@ buttonAdd.addEventListener("click", (event) => {
     valueRace === ""
   ) {
     labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
-  } else {
-    renderKitten(valuePhoto, valueDesc, valueName, valueRace);
   }
+  list.innerHTML += renderKitten();
 });
-
-function renderKitten(url, desc, name, race) {
-  const newKitten = `
-    <li class="card">
-        <article>
-            <img class="card_img" src="${url}" alt="gatito"/> 
-            <h3 class="card_title">${name}</h3>
-            <h4 class="card_race">${race}</h4>
-            <p class="card_description">${desc}</p>
-        </article>
-    </li>`;
-
-  list.innerHTML += newKitten;
-}
 
 const linkNewFormElement = document.querySelector(".menu-nav"); //botón
 const newFormElement = document.querySelector(".new-form"); // contenedor
