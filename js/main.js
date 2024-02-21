@@ -27,34 +27,50 @@ const kittenDataList = [
   },
 ];
 
-const kittenOne = `
-<li class="card js-cardOne">
-    <article>
-        <img class="card_img" src="${kittenDataList[0].image}" alt="gatito"/> <h3 class="card_title">${kittenDataList[0].name}</h3>
-        <h4 class="card_race">${kittenDataList[0].race}</h4>
-        <p class="card_description">${kittenDataList[0].desc}</p>
-    </article>
-</li>`;
 
-const kittenTwo = `
-<li class="card js-cardTwo">
-    <article>
-        <img class="card_img" src="${kittenDataList[1].image}" alt="gatito"/> <h3 class="card_title">${kittenDataList[1].name}</h3>
-        <h4 class="card_race">${kittenDataList[1].race}</h4>
-        <p class="card_description">${kittenDataList[1].desc}</p>
-        </article>
-</li>`;
+function renderKittenList(kittenDataList) {
+  for (const element of kittenDataList){
+    list.innerHTML += `
+    <li class="card js-cardOne">
+      <article>
+        <img class="card_img" src="${element.image}" alt="gatito"/> <h3 class="card_title">${element.name}</h3>
+        <h4 class="card_race">${element.race}</h4>
+        <p class="card_description">${element.desc}</p>
+      </article> 
+    </li>`};
+  }
 
-const kittenThree = `
-<li class="card js-cardThree">
-    <article>
-        <img class="card_img" src="${kittenDataList[2].image}" alt="gatito"/> <h3 class="card_title">${kittenDataList[2].name}</h3>
-        <h4 class="card_race">${kittenDataList[2].race}</h4>
-        <p class="card_description">${kittenDataList[2].desc}</p>
-    </article>
-</li>`;
+  renderKittenList (kittenDataList); 
 
-list.innerHTML = kittenOne + kittenTwo + kittenThree;
+
+// const kittenOne = `
+// <li class="card js-cardOne">
+//     <article>
+//         <img class="card_img" src="${kittenDataList[0].image}" alt="gatito"/> <h3 class="card_title">${kittenDataList[0].name}</h3>
+//         <h4 class="card_race">${kittenDataList[0].race}</h4>
+//         <p class="card_description">${kittenDataList[0].desc}</p>
+//     </article>
+// </li>`;
+
+// const kittenTwo = `
+// <li class="card js-cardTwo">
+//     <article>
+//         <img class="card_img" src="${kittenDataList[1].image}" alt="gatito"/> <h3 class="card_title">${kittenDataList[1].name}</h3>
+//         <h4 class="card_race">${kittenDataList[1].race}</h4>
+//         <p class="card_description">${kittenDataList[1].desc}</p>
+//         </article>
+// </li>`;
+
+// const kittenThree = `
+// <li class="card js-cardThree">
+//     <article>
+//         <img class="card_img" src="${kittenDataList[2].image}" alt="gatito"/> <h3 class="card_title">${kittenDataList[2].name}</h3>
+//         <h4 class="card_race">${kittenDataList[2].race}</h4>
+//         <p class="card_description">${kittenDataList[2].desc}</p>
+//     </article>
+// </li>`;
+
+// list.innerHTML = kittenOne + kittenTwo + kittenThree;
 
 const catOne = document.querySelector(".js-cardOne");
 const catTwo = document.querySelector(".js-cardTwo");
@@ -84,19 +100,22 @@ buttonAdd.addEventListener("click", (event) => {
   }
 });
 
-function renderKitten(url, desc, name, race) {
-  const newKitten = `
-    <li class="card">
-        <article>
-            <img class="card_img" src="${url}" alt="gatito"/> 
-            <h3 class="card_title">${name}</h3>
-            <h4 class="card_race">${race}</h4>
-            <p class="card_description">${desc}</p>
-        </article>
-    </li>`;
+// function renderKitten(url, desc, name, race) {
+//   const newKitten = `
+//     <li class="card">
+//         <article>
+//             <img class="card_img" src="${url}" alt="gatito"/> 
+//             <h3 class="card_title">${name}</h3>
+//             <h4 class="card_race">${race}</h4>
+//             <p class="card_description">${desc}</p>
+//         </article>
+//     </li>`;
 
-  list.innerHTML += newKitten;
-}
+//   list.innerHTML += newKitten;
+// }
+
+
+// ABRIR Y CERRAR BUSQUEDA
 
 const linkNewFormElement = document.querySelector(".menu-nav"); //botón
 const newFormElement = document.querySelector(".new-form"); // contenedor
@@ -104,11 +123,9 @@ const newFormElement = document.querySelector(".new-form"); // contenedor
 function showNewCatForm() {
   newFormElement.classList.remove("collapsed");
 }
-
 function hideNewCatForm() {
   newFormElement.classList.add("collapsed");
 }
-
 linkNewFormElement.addEventListener("click", handleClickNewCatForm);
 
 function handleClickNewCatForm(event) {
@@ -119,8 +136,10 @@ function handleClickNewCatForm(event) {
     hideNewCatForm();
   }
 }
-
 const buttonSearch = document.querySelector(".js-button-search");
+
+
+
 
 const filterKitten = (event) => {
   event.preventDefault();
@@ -147,6 +166,20 @@ const filterKitten = (event) => {
     console.log(3);
   }
 };
+
+// function filterKitten(event) {
+//   event.preventDefault();
+//   listElement.innerHTML = '';
+//   if (kittenDesc1.includes(descrSearchText)) {
+//     listElement.innerHTML += kittenOne;
+//   }
+//   if (kittenDesc2.includes(descrSearchText)) {
+//     listElement.innerHTML += kittenTwo;
+//   }
+//   if (kittenDesc3.includes(descrSearchText)) {
+//     listElement.innerHTML += kittenThree;
+//   }
+// }
 
 buttonSearch.addEventListener("click", filterKitten);
 
